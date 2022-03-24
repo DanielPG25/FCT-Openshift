@@ -1,5 +1,7 @@
 # Despliegue Continuo de Aplicaciones Web usando Openshift 
 
+<img src="OpenShift.png" alt="logo" width="200"/>
+
 ## Índice
 
 #### [1. Introducción](Introduccion/Introduccion.md)
