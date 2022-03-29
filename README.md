@@ -1,14 +1,16 @@
 # Despliegue Continuo de Aplicaciones Web usando Openshift 
 
-<img src="OpenShift.png" alt="logo" width="200"/>
+<p align="center">
+    <img src="OpenShift.png" alt="logo" width="200"/>
+</p>
 
 ## Índice
 
-#### [1. Introducción](Introduccion/Introduccion.md)
+#### [1. Introducción](#introducción)
 
-#### [2. Objetivos](Objetivos/Objetivos.md)
+#### [2. Objetivos del proyecto](#objetivos)
 
-#### [3. Escenario que se ha montado](Escenario/Escenario.md)
+#### [3. Escenario que se ha montado](#escenario-que-se-ha-montado)
 
 #### [4. Fundamentos Teóricos](Fundamentos_Teoricos/teoria.md)
 
@@ -17,3 +19,99 @@
 #### [6. Conclusiones](Conclusiones/Conclusiones.md)
 
 #### [7. Bibliografía](Bibliografia/Bibliografia.md)
+
+-----------------------------------------------------
+
+### Introducción
+
+En este proyecto vamos a aprender como desplegar de forma continua aplicaciones web utilizando una herramienta llamada OpenShift. Esta es una herramienta muy potente la cual, como veremos a lo largo del proyecto, facilitará mucho la labor a los desarrolladores y programadores, haciendo que puedan implantar sus aplicaciones con mucha facilidad.
+
+### Objetivos 
+
+Con la realización de este proyecto se pretenden conseguir los siguientes objetivos:
+
++ Lograr una mayor comprensión de los que es Openshift y su ámbito de aplicación.
++ Desplegar aplicaciones en diferentes lenguajes de programación a través de Openshift utilizando la funcionalidad Source2Image.
++ Conseguir implementar un despliegue continuo de las aplicaciones usando el Webhook de Github.
++ Realizar los despliegues tanto en local con "CodeReady Containers" como online con la prueba gratuita que ofrece Red Hat.
+  
+Estos son los objetivos iniciales, por lo que a medida que se vaya desarrollando el proyecto comprobaremos si pueden cumplirse o no.
+
+### Escenario que se ha montado
+
+Openshift es una herramienta de pago de Red Hat, por lo que a la hora de utilizarla, si no queremos pagar, tenemos básicamente dos opciones disponibles:
+
+1. Minishift
+2. CodeReady Containers (CRC)
+   
+#### Minishift
+
+Minishift es una herramienta de software libre que crea una máquina virtual con un solo cluster de Openshift. No necesita de registro ni subscripciones en ninguna página. Esta herramienta necesita de una software de virtualización para poder funcionar, admitiendo los siguientes softwares:
+
+* Windows:
+    + [Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)
+
+* Linux:
+    + [KVM](https://en.wikipedia.org/wiki/Kernel-based_Virtual_Machine)
+
+* MacOS:
+    + [hyperkit](https://github.com/moby/hyperkit)
+
+* Todos los anteriores:
+    + [VitualBox](https://www.virtualbox.org/wiki/Downloads) (A partir de la versión 5.1.12)
+
+Esta es una gran herramienta para realizar pruebas en local, pero cuenta con el inconveniente de que la versión de Openshift que utiliza es la 3 (en el momento de escribir esto). Esto, para la realización de este proyecto es un gran incoveniente, ya que el cambio de la versión 3 a la 4 de Openshift es bastante grande e influye en muchas cosas. Si aún así, no tienes problemas con este inconveniente y quieres usar "minishift", el siguiente [enlace](https://docs.okd.io/3.11/minishift/getting-started/index.html) te dará más información.
+
+#### CodeReady Containers (CRC)
+
+CodeReady Containers es una herramienta, que al igual que ocurre con "minishift" despliega una máquina virtual en la que se instala un cluster de Openshift de un solo nodo. Esta herramienta es ofrecida por la propia Red Hat, por lo que es necesario tener, como mínimo, una cuenta gratuita en Red Hat. La máquina que crea tiene los siguientes requisitos de hardware: 9 GB de ram, 4 vcpu y 35 GB de disco duro disponible. Debido a esto, es remendable tener una máquina algo potente para poder usar herramienta, ya que esos son los requisitos de la máquina virtual, no de la antitriona. También es necesario que el sistema operativo anfitrión sea Centos (versión 7.5 o mayor), Red Hat o Fedora (las dos últimas versiones estables).
+
+La gran ventaja que ofrece esta herramienta con respecto a "minishift", es que podemos usar la versión 4 de Openshift, por lo que es una herramienta que nos ofrece la capacidad de administrar y utilizar un cluster de Openshift con todas las funcionalidades que ofrece dicha versión. Es debido a esto, que para la realización de este proyecto vamos a utilizar esta herramienta y no "minishift".
+
+--------------------------------------------------
+
+#### Escenario
+
+Dicho esto, vamos a explicar como montar el escenario en el que desarrollaremos el proyecto:
+
+1. En primer lugar, he creado una máquina virtual con el sistema operativo Centos 8, con 10 GB de ram, 6 vcpu y 60 GB de disco duro.
+2. Nos aseguramos de que nuestro usuario (no `root`) esté en el grupo de `sudoers` (tenga permisos de `root`).
+3. Instalamos los paquetes necesarios:
+   
+```
+sudo dnf install -y libvirt NetworkManager
+```
+
+4. Descargamos crc:
+
+![descarga.png](Escenario/descarga.png)
+
+1. Descomprimimos el fichero:
+
+```
+tar xvf crc-linux-amd64.tar.xz
+```
+
+6. Dentro hay un binario llamado `crc`. Este binario lo movemos a algún directorio que se encuentre en el PATH:
+
+```
+sudo install crc /usr/local/bin/crc
+```
+
+7. Ejecutamos el siguiente comando, el cual comprobará si la máquina cumple con los requisitos y realizará la configuración necesaria para instalar la máquina virtual:
+
+```
+crc setup
+```
+
+8. Una vez que haya finalizado el comando anterior, debemos ejecutar el siguiente para levantar la máquina virtual y el cluster:
+
+```
+crc start
+```
+
+9. Durante la primera inicialización, nos pedirá un `pull secret`, para verificar que estamos registrados en Red Hat. Dicho `pull secret` lo podemos encontrar en la misma página de donde descargamos CRC:
+
+![pullsecret.png](Escenario/pullsecret.png)
+
+Con esto hemos terminado de crear el escenario con el que trabajaremos a lo largo del proyecto.
