@@ -44,7 +44,7 @@ Estos son los objetivos iniciales, por lo que a medida que se vaya desarrollando
 El "PaaS" (*Platform as a Service* o Plataforma como Servicio) es una modalidad de Cloud Computing especialmente pensada para desarrolladores y programadores, ya que permite a los mismos desarrollar sus aplicaciones sin tener que preocuparse por la infraestructura ni el *middleware*, herramientas de desarrollo, administración de bases de datos, etc. Básicamente ofrecen al desarrollador/programador total libertad para crear sus aplicaciones sin tener que preocuparse por nada más. Existen otras modalidades de Cloud Computing como son la Infraestructura como Servicio ("IaaS") y el Software como Servicio ("SaaS"). Las diferencias entre ellos las podemos apreciar en la siguiente imagen:
 
 <p align="center">
-![iaas-paas-saas-diagram.png](Fundamentos_Teoricos/iaas-paas-saas-diagram.png)
+    <img src="Fundamentos_Teoricos/iaas-paas-saas-diagram.png" alt=""/>
 </p>
 
 Como podemos ver, en el caso del "IaaS", el proveedor se encarga únicamente de mantener la infraestructura, dejando el resto en manos del usuario, mientras que en el "SaaS", el proveedor de encarga de todo, de forma que usuario solo debe preocuparse de usar el software que ha contratado.
