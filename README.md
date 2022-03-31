@@ -43,7 +43,9 @@ Estos son los objetivos iniciales, por lo que a medida que se vaya desarrollando
 
 El "PaaS" (*Platform as a Service* o Plataforma como Servicio) es una modalidad de Cloud Computing especialmente pensada para desarrolladores y programadores, ya que permite a los mismos desarrollar sus aplicaciones sin tener que preocuparse por la infraestructura ni el *middleware*, herramientas de desarrollo, administración de bases de datos, etc. Básicamente ofrecen al desarrollador/programador total libertad para crear sus aplicaciones sin tener que preocuparse por nada más. Existen otras modalidades de Cloud Computing como son la Infraestructura como Servicio ("IaaS") y el Software como Servicio ("SaaS"). Las diferencias entre ellos las podemos apreciar en la siguiente imagen:
 
+<p align="center">
 ![iaas-paas-saas-diagram.png](Fundamentos_Teoricos/iaas-paas-saas-diagram.png)
+</p>
 
 Como podemos ver, en el caso del "IaaS", el proveedor se encarga únicamente de mantener la infraestructura, dejando el resto en manos del usuario, mientras que en el "SaaS", el proveedor de encarga de todo, de forma que usuario solo debe preocuparse de usar el software que ha contratado.
 
@@ -106,7 +108,9 @@ sudo dnf install -y libvirt NetworkManager
 
 4. Descargamos crc:
 
+<p align="center">
 ![descarga.png](Escenario/descarga.png)
+</p>
 
 1. Descomprimimos el fichero:
 
@@ -134,7 +138,9 @@ crc start
 
 9. Durante la primera inicialización, nos pedirá un `pull secret`, para verificar que estamos registrados en Red Hat. Dicho `pull secret` lo podemos encontrar en la misma página de donde descargamos CRC:
 
+<p align="center">
 ![pullsecret.png](Escenario/pullsecret.png)
+</p>
 
 10. A continuación, instalamos el comando `oc` y ejecutamos el siguiente comando:
 
@@ -167,18 +173,28 @@ Werkzeug==2.1.0
 
 Una vez que hemos hecho esto, entramos en la consola web de Openshift e indicamos que vamos a crear una nueva aplicación importando el código desde Git:
 
+<p align="center">
 ![importar_codigo_git.png](Practica/importar_codigo_git.png)
+</p>
 
 A continuación, solo tenemos que indicarle el repositorio en el que se encuentra el código, y algunas pequeñas configuraciones (puerto en el que escucha la aplicación, nombre de la misma, etc):
 
+<p align="center">
 ![url_git.png](Practica/url_git.png)
+</p>
 
 Una vez que hemos terminado de añadir esa configuración, le damos a crear y listo. Con esto ya se encarga Openshift de todo lo demás (crear deployment, replicasets, pods, servicios, rutas, etc):
 
+<p align="center">
 ![flask_temperaturas.png](Practica/flask_temperaturas.png)
+</p>
 
 Pasado un tiempo, se desplegarán los pods y podremos acceder a la aplicación a través del servicio y la ruta que crea automáticamente Openshift:
 
+<p align="center">
 ![ruta_flask.png](Practica/ruta_flask.png)
+</p>
 
+<p align="center">
 ![flask_pagina.png](Practica/flask_pagina.png)
+</p>
