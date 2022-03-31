@@ -109,7 +109,7 @@ sudo dnf install -y libvirt NetworkManager
 4. Descargamos crc:
 
 <p align="center">
-![descarga.png](Escenario/descarga.png)
+    <img src="Escenario/descarga.png" alt=""/>
 </p>
 
 1. Descomprimimos el fichero:
@@ -139,10 +139,10 @@ crc start
 9. Durante la primera inicialización, nos pedirá un `pull secret`, para verificar que estamos registrados en Red Hat. Dicho `pull secret` lo podemos encontrar en la misma página de donde descargamos CRC:
 
 <p align="center">
-![pullsecret.png](Escenario/pullsecret.png)
+    <img src="Escenario/pullsecret.png" alt=""/>
 </p>
 
-10. A continuación, instalamos el comando `oc` y ejecutamos el siguiente comando:
+1.  A continuación, instalamos el comando `oc` y ejecutamos el siguiente comando:
 
 ```
 oc adm policy add-scc-to-user anyuid -z default
@@ -174,27 +174,27 @@ Werkzeug==2.1.0
 Una vez que hemos hecho esto, entramos en la consola web de Openshift e indicamos que vamos a crear una nueva aplicación importando el código desde Git:
 
 <p align="center">
-![importar_codigo_git.png](Practica/importar_codigo_git.png)
+    <img src="Practica/importar_codigo_git.png" alt=""/>
 </p>
 
 A continuación, solo tenemos que indicarle el repositorio en el que se encuentra el código, y algunas pequeñas configuraciones (puerto en el que escucha la aplicación, nombre de la misma, etc):
 
 <p align="center">
-![url_git.png](Practica/url_git.png)
+    <img src="Practica/url_git.png" alt=""/>
 </p>
 
 Una vez que hemos terminado de añadir esa configuración, le damos a crear y listo. Con esto ya se encarga Openshift de todo lo demás (crear deployment, replicasets, pods, servicios, rutas, etc):
 
 <p align="center">
-![flask_temperaturas.png](Practica/flask_temperaturas.png)
+    <img src="Practica/flask_temperaturas.png" alt=""/>
 </p>
 
 Pasado un tiempo, se desplegarán los pods y podremos acceder a la aplicación a través del servicio y la ruta que crea automáticamente Openshift:
 
 <p align="center">
-![ruta_flask.png](Practica/ruta_flask.png)
+    <img src="Practica/ruta_flask.png" alt=""/>
 </p>
 
 <p align="center">
-![flask_pagina.png](Practica/flask_pagina.png)
+    <img src="Practica/flask_pagina.png" alt=""/>
 </p>
