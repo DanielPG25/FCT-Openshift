@@ -14,7 +14,7 @@
 
 #### [4. Escenario que se ha montado](#escenario-que-se-ha-montado)
 
-#### [5. Realización de la parte práctica](Practica/Practica.md)
+#### [5. Realización de la parte práctica](#casos-prácticos)
 
 #### [6. Conclusiones](Conclusiones/Conclusiones.md)
 
@@ -136,4 +136,49 @@ crc start
 
 ![pullsecret.png](Escenario/pullsecret.png)
 
-Con esto hemos terminado de crear el escenario con el que trabajaremos a lo largo del proyecto.
+10. A continuación, instalamos el comando `oc` y ejecutamos el siguiente comando:
+
+```
+oc adm policy add-scc-to-user anyuid -z default
+```
+
+*Nota:* El `default` lo sustituimos por el "namespace" o proyecto con el que estemos trabajando. 
+
+El comando anterior nos permite crear contenedores que se ejecutan como `root`, algo que normalmente (por seguridad) no está permitido en Openshift. En un contexto real, un administrador daría los permisos individuales o de grupo que los desarrolladores necesitaran, y se usarían imágenes adaptadas a Openshift, por lo que el uso de dicho comando no sería necesario, pero para el contexto del proyecto nos viene muy bien para hacer las pruebas y prácticas que necesitemos.
+
+Así pues, hemos terminado de crear el escenario con el que trabajaremos a lo largo del proyecto.
+
+### Casos Prácticos
+
+Para este proyecto vamos a ver las diferentes formas que tiene Openshift de crear contendedores. Antes hemos mencionado el Source2Image, pero Openshift nos ofrece también otras opciones que son bastante interesantes.
+
+#### Image2Source de una aplicación basada en python
+
+En primer lugar, vamos a comenzar con una aplicación simple escrita en pyhton. Para ello he elegido la aplicación desarrollada por José Domingo Muñoz de "temperaturas_flask", la cual la podéis encontrar en el siguiente [repositorio](https://github.com/josedom24/flask_temperaturas). Esta aplicación nos muestra la temperatura máxima y mínima del día en el municipio de Sevilla que le indiquemos. Así pues, lo primero que hemos hecho ha sido hacer un fork del repositorio y actualizar el fichero "requirements.txt", ya que la versión de los paquetes estaban desactualizadas y darían problemas en openshift:
+
+```
+Flask==2.0
+itsdangerous==2.1.2
+Jinja2==3.1.1
+lxml==4.6.3
+MarkupSafe==2.1.1
+Werkzeug==2.1.0
+```
+
+Una vez que hemos hecho esto, entramos en la consola web de Openshift e indicamos que vamos a crear una nueva aplicación importando el código desde Git:
+
+![importar_codigo_git.png](Practica/importar_codigo_git.png)
+
+A continuación, solo tenemos que indicarle el repositorio en el que se encuentra el código, y algunas pequeñas configuraciones (puerto en el que escucha la aplicación, nombre de la misma, etc):
+
+![url_git.png](Practica/url_git.png)
+
+Una vez que hemos terminado de añadir esa configuración, le damos a crear y listo. Con esto ya se encarga Openshift de todo lo demás (crear deployment, replicasets, pods, servicios, rutas, etc):
+
+![flask_temperaturas.png](Practica/flask_temperaturas.png)
+
+Pasado un tiempo, se desplegarán los pods y podremos acceder a la aplicación a través del servicio y la ruta que crea automáticamente Openshift:
+
+![ruta_flask.png](Practica/ruta_flask.png)
+
+![flask_pagina.png](Practica/flask_pagina.png)

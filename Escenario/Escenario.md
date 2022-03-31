@@ -75,4 +75,14 @@ crc start
 
 ![pullsecret.png](pullsecret.png)
 
-Con esto hemos terminado de crear el escenario con el que trabajaremos a lo largo del proyecto.
+10. A continuación, instalamos el comando `oc` y ejecutamos el siguiente comando:
+
+```
+oc adm policy add-scc-to-user anyuid -z default
+```
+
+*Nota:* El `default` lo sustituimos por el "namespace" o proyecto con el que estemos trabajando. 
+
+El comando anterior nos permite crear contenedores que se ejecutan como `root`, algo que normalmente (por seguridad) no está permitido en Openshift. En un contexto real, un administrador daría los permisos individuales o de grupo que los desarrolladores necesitaran, y se usarían imágenes adaptadas a Openshift, por lo que el uso de dicho comando no sería necesario, pero para el contexto del proyecto nos viene muy bien para hacer las pruebas y prácticas que necesitemos.
+
+Así pues, hemos terminado de crear el escenario con el que trabajaremos a lo largo del proyecto.
