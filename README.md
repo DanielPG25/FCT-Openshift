@@ -61,6 +61,12 @@ Una de las principales ventajas que ofrece OpenShift es que podemos desplegar di
 
 Debido a que OpenShift es un producto de Red Hat, la mayoría de las opciones para practicar y aprender a usar OpenShift son de pago. Red Hat nos ofrece una capa gratuita temporal muy limitada (uno o dos meses), por lo que para este proyecto vamos a tener opciones, las cuales desarrollaremos con más profundidad en el siguiente apartado. 
 
+#### ¿Qué es Ngrok?
+
+Ngrok es una herramienta que nos permite exponer al exterior servidores que se encuentran en una red local a través de diversos tipos de túneles (HTTP, TLS, TCP, etc). Esto nos permite hacer que nuestro servidor de Openshift pueda recibir notificaciones desde fuera de la red local, lo que nos será muy útil, sobre todo a la hora de configurar los `webhooks` de Github.
+
+Es una herramienta de pago que ofrece una capa gratuita, que será la que usaremos en el proyecto. Podemos encontrar más información sobre "Ngrok" en el siguiente [enlace](https://ngrok.com/docs).
+
 ### Escenario que se ha montado
 
 Openshift es una herramienta de pago de Red Hat, por lo que a la hora de utilizarla, si no queremos pagar, tenemos básicamente dos opciones disponibles:
