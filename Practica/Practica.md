@@ -32,3 +32,5 @@ Pasado un tiempo, se desplegarán los pods y podremos acceder a la aplicación a
 ![ruta_flask.png](Practica/ruta_flask.png)
 
 ![flask_pagina.png](Practica/flask_pagina.png)
+
+Como hemos visto, hemos podido desplegar una aplicación y ponerla en funcionamiento de forma muy sencilla, sin tener que crear por nuestra cuenta ninguno de los recursos que tendríamos que haber creado si hubiéramos tenido que desplegarla en Kubernetes o Docker (ReplicaSet, Service, Deployment, Dockerfile, etc). Sin embargo, esto no es todo. Openshift también nos ofrece la posibilidad de implantar las aplicaciones de forma continua, lo que se conoce como "Despliegue Continuo". Para ello nos ofrece varias posibilidades, de entre las cuales no
