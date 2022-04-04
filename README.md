@@ -118,7 +118,7 @@ sudo dnf install -y libvirt NetworkManager
     <img src="Escenario/descarga.png" alt=""/>
 </p>
 
-1. Descomprimimos el fichero:
+5. Descomprimimos el fichero:
 
 ```
 tar xvf crc-linux-amd64.tar.xz
@@ -148,7 +148,7 @@ crc start
     <img src="Escenario/pullsecret.png" alt=""/>
 </p>
 
-1.  A continuación, instalamos el comando `oc` y ejecutamos el siguiente comando:
+10.  A continuación, instalamos el comando `oc` y ejecutamos el siguiente comando:
 
 ```
 oc adm policy add-scc-to-user anyuid -z default
@@ -186,21 +186,21 @@ Una vez que hemos hecho esto, entramos en la consola web de Openshift e indicamo
 A continuación, solo tenemos que indicarle el repositorio en el que se encuentra el código, y algunas pequeñas configuraciones (puerto en el que escucha la aplicación, nombre de la misma, etc):
 
 <p align="center">
-    <img src="Practica/url_git.png" alt=""/>
+    <img src="Practica/url_git.png" alt="" width="300"/>
 </p>
 
 Una vez que hemos terminado de añadir esa configuración, le damos a crear y listo. Con esto ya se encarga Openshift de todo lo demás (crear deployment, replicasets, pods, servicios, rutas, etc):
 
 <p align="center">
-    <img src="Practica/flask_temperaturas.png" alt=""/>
+    <img src="Practica/flask_temperaturas.png" alt="" width="300"/>
 </p>
 
 Pasado un tiempo, se desplegarán los pods y podremos acceder a la aplicación a través del servicio y la ruta que crea automáticamente Openshift:
 
 <p align="center">
-    <img src="Practica/ruta_flask.png" alt=""/>
+    <img src="Practica/ruta_flask.png" alt="" width="300"/>
 </p>
 
 <p align="center">
-    <img src="Practica/flask_pagina.png" alt=""/>
+    <img src="Practica/flask_pagina.png" alt="" width="300"/>
 </p>
