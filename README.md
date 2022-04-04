@@ -186,7 +186,7 @@ Una vez que hemos hecho esto, entramos en la consola web de Openshift e indicamo
 A continuación, solo tenemos que indicarle el repositorio en el que se encuentra el código, y algunas pequeñas configuraciones (puerto en el que escucha la aplicación, nombre de la misma, etc):
 
 <p align="center">
-    <img src="Practica/url_git.png" alt="" width="300"/>
+    <img src="Practica/url_git.png" alt="" width="500"/>
 </p>
 
 Una vez que hemos terminado de añadir esa configuración, le damos a crear y listo. Con esto ya se encarga Openshift de todo lo demás (crear deployment, replicasets, pods, servicios, rutas, etc):
@@ -198,9 +198,9 @@ Una vez que hemos terminado de añadir esa configuración, le damos a crear y li
 Pasado un tiempo, se desplegarán los pods y podremos acceder a la aplicación a través del servicio y la ruta que crea automáticamente Openshift:
 
 <p align="center">
-    <img src="Practica/ruta_flask.png" alt="" width="300"/>
+    <img src="Practica/ruta_flask.png" alt="" width="500"/>
 </p>
 
 <p align="center">
-    <img src="Practica/flask_pagina.png" alt="" width="300"/>
+    <img src="Practica/flask_pagina.png" alt="" width="500"/>
 </p>
