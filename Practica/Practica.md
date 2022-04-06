@@ -54,3 +54,6 @@ El enlace marcado en rojo es el que tenemos que añadir a la configuración del 
 Ahora, cada vez que se haga un `push` al repositorio, enviará mensaje a Openshift avisando del cambio, el cual generará un nuevo build:
 
 ![dc1.gif](Practica/dc1.gif)
+
+Como vemos, al hacer un cambio en el repositorio, se ha activado una nueva build. Cuando termine, si accedemos a la página de la aplicación, podemos ver que el cambio se ha producido correctamente:
+
