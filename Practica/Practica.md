@@ -57,3 +57,5 @@ Ahora, cada vez que se haga un `push` al repositorio, enviará mensaje a Openshi
 
 Como vemos, al hacer un cambio en el repositorio, se ha activado una nueva build. Cuando termine, si accedemos a la página de la aplicación, podemos ver que el cambio se ha producido correctamente:
 
+![flask_pagina2.png](Practica/flask_pagina2.png)
+
