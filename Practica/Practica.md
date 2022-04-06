@@ -53,4 +53,4 @@ El enlace marcado en rojo es el que tenemos que añadir a la configuración del 
 
 Ahora, cada vez que se haga un `push` al repositorio, enviará mensaje a Openshift avisando del cambio, el cual generará un nuevo build:
 
-![output.gif](Practica/output.gif)
+![dc1.gif](Practica/dc1.gif)
