@@ -230,5 +230,5 @@ El enlace marcado en rojo es el que tenemos que añadir a la configuración del 
 Ahora, cada vez que se haga un `push` al repositorio, enviará mensaje a Openshift avisando del cambio, el cual generará un nuevo build:
 
 <p align="center">
-    <img src="Practica/dc1.gif" alt="" width="1000"/>
+    <img src="Practica/dc1.gif" alt="" width="1200"/>
 </p>
