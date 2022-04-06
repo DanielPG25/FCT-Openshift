@@ -204,3 +204,31 @@ Pasado un tiempo, se desplegarán los pods y podremos acceder a la aplicación a
 <p align="center">
     <img src="Practica/flask_pagina.png" alt="" width="500"/>
 </p>
+
+Como hemos visto, hemos podido desplegar una aplicación y ponerla en funcionamiento de forma muy sencilla, sin tener que crear por nuestra cuenta ninguno de los recursos que tendríamos que haber creado si hubiéramos tenido que desplegarla en Kubernetes o Docker (ReplicaSet, Service, Deployment, Dockerfile, etc). Sin embargo, esto no es todo. Openshift también nos ofrece la posibilidad de implantar las aplicaciones de forma continua, lo que se conoce como "Despliegue Continuo". Para ello nos ofrece varias posibilidades, de entre las cuales me he decantado por usar el `Webhook` de Github, el cual avisará a Openshift cada vez que se produzca un cambio en un repositorio.
+
+Hacer esto en un cluster real es más sencillo que hacerlo en local, ya que normalmente las empresas disponen de repositorios privados y dichos repositorios tienen acceso al cluster de Openshift. Sin embargo, al tener nuestro cluster desplegado en CRC y en local, Github no puede comunicarse con él, por lo que no puede enviar el Webhook. Para solventar este problema, vamos a usar una herramienta gratuita llamada `ngrok`, la cual nos creará un túnel http a través del cual Github podrá comunicarse con nuestro cluster de Openshift local.
+
+Para ello, una vez que hemos instalado la herramienta, ejecutamos el siguiente comando **dentro** de la máquina virtual que crea CRC (para que funcione no debemos cortar la ejecución del comando en ningún momento):
+
+```
+ngrok http https://localhost:6443
+```
+
+Una vez hecho esto, nos creará lo siguiente:
+
+<p align="center">
+    <img src="Practica/ngrok1.png" alt="" width="500"/>
+</p>
+
+El enlace marcado en rojo es el que tenemos que añadir a la configuración del `Webhook` de Github. También debemos añadir lo siguiente en la configuración: `/apis/build.openshift.io/v1/namespaces/prueba/buildconfigs/flask-temperaturas/webhooks/<SECRET>/github` (la ruta del `Webhook` nos la indica el propio build de la aplicación). Así pues, la configuración del `Webhook` queda de la siguiente forma:
+
+<p align="center">
+    <img src="Practica/webhook1.png" alt="" width="500"/>
+</p>
+
+Ahora, cada vez que se haga un `push` al repositorio, enviará mensaje a Openshift avisando del cambio, el cual generará un nuevo build:
+
+<p align="center">
+    <img src="Practica/output.gif" alt="" width="500"/>
+</p>
