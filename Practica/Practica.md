@@ -59,3 +59,28 @@ Como vemos, al hacer un cambio en el repositorio, se ha activado una nueva build
 
 ![flask_pagina2.png](Practica/flask_pagina2.png)
 
+## Creación de una aplicación a partir de un Dockerfile
+
+Anteriormente hemos comprobado como Openshift puede crear una aplicación a partir del código fuente de la misma y una imagen base. Sin embargo, esta no es la única opción que nos ofrece Openshift para crear las aplicaciones. Ahora veremos otra de las opciones: crear una aplicación a partir de un Dockerfile.
+
+Así pues, he creado un Dockerfile a partir del cual se desplegará una aplicación escrita en `php` llamada `bookmedik`. Dicho Dockerfile se encuentra en este [repositorio de Github](https://github.com/DanielPG25/bookmedik_openshift.git). Esta aplicación necesita de una base de datos para poder funcionar, por lo que en primer lugar he creado dicha base de datos usando como base la imagen de mariadb que nos ofrece openshift:
+
+![mariadb.png](Practica/mariadb.png)
+
+Dicha imagen es bastante simple de configurar, ya que lo único que nos pide son las variables de entorno necesarias para configurar mariadb (contraseña de root, nombre de la base de datos, etc):
+
+![mariadb2.png](Practica/mariadb2.png)
+
+Una vez hecho esto, ya podemos ponernos a crear la aplicación de bookmedik. Para ello, al igual de hicimos anteriormente, le indicamos el repositorio en el que se encuentra el fichero Dockerfile:
+
+![bookmedik_docker.png](Practica/bookmedik_docker.png)
+
+Como vemos, Openshift detecta automáticamente el Dockerfile y nos indica que esa es la opción deseable para construir la aplicación. Solo debemos indicarle el puerto en el cual escuchará la aplicación. Así pues, le indicamos que queremos que construya la aplicación a partir de dicho Dockerfile, lo cual generará todos los recursos y procesos necesarios para crear la aplicación (build, deployment, services, etc). Pasado un tiempo, ya tendremos creada y lista nuestra aplicación `bookmedik`:
+
+![bookmedik.png](Practica/bookmedik.png)
+
+Si entramos en la ruta que se ha creado automáticamente, nos encontramos a la aplicación funcionando perfectamente:
+
+![bookmedik1.png](Practica/bookmedik1.png)
+
+![bookmedik2.png](Practica/bookmedik2.png)
