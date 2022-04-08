@@ -87,3 +87,10 @@ Si entramos en la ruta que se ha creado automáticamente, nos encontramos a la a
 
 El despliegue continuo se configura exactamente de la misma forma forma que en el paso anterior: activar ngrok, cambiar la url en el webhook de Github, etc. Así pues, una vez hecho esto, cada vez que hagamos un cambio en el repositorio, Github avisará a Openshift y volverá a saltar el build y el despliegue de la aplicación:
 
+
+
+Y si entramos en la aplicación, vemos que se ha producido el cambio:
+
+![bookmedik_afterhook.png](Practica/bookmedik_afterhook.png)
+
+Como vemos, desplegar aplicaciones tanto desde el código fuente usando Image2Source, como desplegarlas desde un fichero Dockerfile es bastante sencillo, lo que proporciona muchas posibilidades a los desarrolladores que trabajen con Openshift y no quieran/puedan aprender sobre como funiona Kubernetes y/o Docker. 
