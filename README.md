@@ -233,3 +233,58 @@ Ahora, cada vez que se haga un `push` al repositorio, enviará mensaje a Openshi
     <img src="Practica/dc1.gif" alt="" width="1000"/>
 </p>
 
+Como vemos, al hacer un cambio en el repositorio, se ha activado una nueva build. Cuando termine, si accedemos a la página de la aplicación, podemos ver que el cambio se ha producido correctamente:
+
+<p align="center">
+    <img src="Practica/flask_pagina2.png" alt="" width="500"/>
+</p>
+
+#### Creación de una aplicación a partir de un Dockerfile
+
+Anteriormente hemos comprobado como Openshift puede crear una aplicación a partir del código fuente de la misma y una imagen base. Sin embargo, esta no es la única opción que nos ofrece Openshift para crear las aplicaciones. Ahora veremos otra de las opciones: crear una aplicación a partir de un Dockerfile.
+
+Así pues, he creado un Dockerfile a partir del cual se desplegará una aplicación escrita en `php` llamada `bookmedik`. Dicho Dockerfile se encuentra en este [repositorio de Github](https://github.com/DanielPG25/bookmedik_openshift.git). Esta aplicación necesita de una base de datos para poder funcionar, por lo que en primer lugar he creado dicha base de datos usando como base la imagen de mariadb que nos ofrece openshift:
+
+<p align="center">
+    <img src="Practica/mariadb.png)" alt="" width="500"/>
+</p>
+
+Dicha imagen es bastante simple de configurar, ya que lo único que nos pide son las variables de entorno necesarias para configurar mariadb (contraseña de root, nombre de la base de datos, etc):
+
+<p align="center">
+    <img src="Practica/mariadb2.png" alt="" width="500"/>
+</p>
+
+Una vez hecho esto, ya podemos ponernos a crear la aplicación de bookmedik. Para ello, al igual de hicimos anteriormente, le indicamos el repositorio en el que se encuentra el fichero Dockerfile:
+
+<p align="center">
+    <img src="Practica/bookmedik_docker.png" alt="" width="500"/>
+</p>
+
+Como vemos, Openshift detecta automáticamente el Dockerfile y nos indica que esa es la opción deseable para construir la aplicación. Solo debemos indicarle el puerto en el cual escuchará la aplicación. Así pues, le indicamos que queremos que construya la aplicación a partir de dicho Dockerfile, lo cual generará todos los recursos y procesos necesarios para crear la aplicación (build, deployment, services, etc). Pasado un tiempo, ya tendremos creada y lista nuestra aplicación `bookmedik`:
+
+<p align="center">
+    <img src="Practica/bookmedik.png" alt="" width="500"/>
+</p>
+
+Si entramos en la ruta que se ha creado automáticamente, nos encontramos a la aplicación funcionando perfectamente:
+
+<p align="center">
+    <img src="Practica/bookmedik1.png" alt="" width="500"/>
+</p>
+
+<p align="center">
+    <img src="Practica/bookmedik2.png" alt="" width="500"/>
+</p>
+
+El despliegue continuo se configura exactamente de la misma forma forma que en el paso anterior: activar ngrok, cambiar la url en el webhook de Github, etc. Así pues, una vez hecho esto, cada vez que hagamos un cambio en el repositorio, Github avisará a Openshift y volverá a saltar el build y el despliegue de la aplicación:
+
+<p align="center">
+    <img src="Practica/dockefile.gif" alt="" width="1000"/>
+</p>
+
+Y si entramos en la aplicación, vemos que se ha producido el cambio:
+
+<p align="center">
+    <img src="Practica/bookmedik_afterhook.png" alt="" width="500"/>
+</p>

@@ -87,7 +87,7 @@ Si entramos en la ruta que se ha creado automáticamente, nos encontramos a la a
 
 El despliegue continuo se configura exactamente de la misma forma forma que en el paso anterior: activar ngrok, cambiar la url en el webhook de Github, etc. Así pues, una vez hecho esto, cada vez que hagamos un cambio en el repositorio, Github avisará a Openshift y volverá a saltar el build y el despliegue de la aplicación:
 
-
+![dockefile.gif](Practica/dockefile.gif)
 
 Y si entramos en la aplicación, vemos que se ha producido el cambio:
 
