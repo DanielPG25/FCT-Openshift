@@ -84,3 +84,6 @@ Si entramos en la ruta que se ha creado automáticamente, nos encontramos a la a
 ![bookmedik1.png](Practica/bookmedik1.png)
 
 ![bookmedik2.png](Practica/bookmedik2.png)
+
+El despliegue continuo se configura exactamente de la misma forma forma que en el paso anterior: activar ngrok, cambiar la url en el webhook de Github, etc. Así pues, una vez hecho esto, cada vez que hagamos un cambio en el repositorio, Github avisará a Openshift y volverá a saltar el build y el despliegue de la aplicación:
+
