@@ -1,16 +1,17 @@
 kind: Template
-apiVersion: v1
+apiVersion: template.openshift.io/v1
 metadata:
   name: wordpress-mysql
   annotations:
     openshift.io/display-name: WordPress y MySQL
     description: >
-      Una aplicación Wordpress con una base de datos MySQl, que usan almacenamiento persistente
+      Una aplicación Wordpress con una base de datos MySQL, que usan almacenamiento persistente
       para guardar tanto lo que subamos a Wordpress como los datos de la base de datos.
     tags: instant-app,php,wordpress
     iconClass: icon-php
 labels:
   template: wordpress-mysql
+  app: wordpress
 parameters:
   - name: APPLICATION_NAME
     description: >
@@ -240,7 +241,7 @@ objects:
         spec:
           containers:
             - name: mysql
-              image: openshift/mysql
+              image: image-registry.openshift-image-registry.svc:5000/openshift/mysql
               ports:
                 - containerPort: 3306
               env:
