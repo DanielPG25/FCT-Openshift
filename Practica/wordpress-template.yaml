@@ -253,7 +253,7 @@ objects:
                   value: ${DATABASE_NAME}
               volumeMounts:
                 - name: ${APPLICATION_NAME}-mysql-data
-                  mountPath: /var/lib/mysql/data
+                  mountPath: /var/lib/mysql
           volumes:
             - name: ${APPLICATION_NAME}-mysql-data
               persistentVolumeClaim:
