@@ -11,7 +11,7 @@ metadata:
     iconClass: icon-php
 labels:
   template: wordpress-mysql
-  app: wordpress
+  app.kubernetes.io/part-of: wordpress
 parameters:
   - name: APPLICATION_NAME
     description: >
