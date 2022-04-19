@@ -13,11 +13,11 @@
 
 #### [3. Fundamentos Teóricos](#fundamentos-teóricos)
 
-##### [¿Qué es PaaS?](#que-es-paas)
+##### [¿Qué es PaaS?](#qué-es-paas-1)
 
-##### [¿Qué es OpenShift?](#que-es-openshift)
+##### [¿Qué es OpenShift?](#qué-es-openshift)
 
-##### [¿Qué es Ngrok?](#¿que-es-ngrok)
+##### [¿Qué es Ngrok?](#¿qué-es-ngrok)
 #### [4. Escenario que se ha montado](#escenario-que-se-ha-montado)
 
 ##### [Minishift](#minishift)
