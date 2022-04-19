@@ -8,13 +8,31 @@
 
 #### [1. Introducción](#introducción)
 
+
 #### [2. Objetivos del proyecto](#objetivos)
 
 #### [3. Fundamentos Teóricos](#fundamentos-teóricos)
 
+##### [¿Qué es PaaS?](#qué-es-paas)
+
+##### [¿Qué es OpenShift?](#qué-es-openshift)
+
+##### [¿Qué es Ngrok?](#¿qué-es-ngrok)
 #### [4. Escenario que se ha montado](#escenario-que-se-ha-montado)
 
+##### [Minishift](#minishift)
+
+##### [CodeReady Containers (CRC)](#codeready-containers-crc)
+
+##### [Escenarios](#escenario)
+
 #### [5. Realización de la parte práctica](#casos-prácticos)
+
+##### [Image2Source](#image2source-de-una-aplicación-basada-en-python)
+
+##### [Dockerfile](#creación-de-una-aplicación-a-partir-de-un-dockerfile)
+
+##### [Plantilla](#creación-de-una-aplicación-a-partir-de-una-plantilla)
 
 #### [6. Conclusiones](Conclusiones/Conclusiones.md)
 
@@ -39,9 +57,9 @@ Estos son los objetivos iniciales, por lo que a medida que se vaya desarrollando
 
 ### Fundamentos Teóricos
 
-#### ¿Qué es el PaaS?
+#### ¿Qué es PaaS?
 
-El "PaaS" (*Platform as a Service* o Plataforma como Servicio) es una modalidad de Cloud Computing especialmente pensada para desarrolladores y programadores, ya que permite a los mismos desarrollar sus aplicaciones sin tener que preocuparse por la infraestructura ni el *middleware*, herramientas de desarrollo, administración de bases de datos, etc. Básicamente ofrecen al desarrollador/programador total libertad para crear sus aplicaciones sin tener que preocuparse por nada más. Existen otras modalidades de Cloud Computing como son la Infraestructura como Servicio ("IaaS") y el Software como Servicio ("SaaS"). Las diferencias entre ellos las podemos apreciar en la siguiente imagen:
+"PaaS" (*Platform as a Service* o Plataforma como Servicio) es una modalidad de Cloud Computing especialmente pensada para desarrolladores y programadores, ya que permite a los mismos desarrollar sus aplicaciones sin tener que preocuparse por la infraestructura ni el *middleware*, herramientas de desarrollo, administración de bases de datos, etc. Básicamente ofrecen al desarrollador/programador total libertad para crear sus aplicaciones sin tener que preocuparse por nada más. Existen otras modalidades de Cloud Computing como son la Infraestructura como Servicio ("IaaS") y el Software como Servicio ("SaaS"). Las diferencias entre ellos las podemos apreciar en la siguiente imagen:
 
 <p align="center">
     <img src="Fundamentos_Teoricos/iaas-paas-saas-diagram.png" alt=""/>
@@ -288,3 +306,6 @@ Y si entramos en la aplicación, vemos que se ha producido el cambio:
 <p align="center">
     <img src="Practica/bookmedik_afterhook.png" alt="" width="500"/>
 </p>
+
+#### Creación de una aplicación a partir de una Plantilla
+
