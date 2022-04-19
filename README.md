@@ -13,7 +13,7 @@
 
 #### [3. Fundamentos Teóricos](#fundamentos-teóricos)
 
-#####   [¿Qué es PaaS?](#qué-es-paas)
+##### [¿Qué es PaaS?](#qué-es-paas)
 
 ##### [¿Qué es OpenShift?](#qué-es-openshift)
 
