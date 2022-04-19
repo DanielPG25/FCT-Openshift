@@ -15,16 +15,16 @@
 
 ##### [¿Qué es PaaS?](#qué-es-paas-1)
 
-##### [¿Qué es OpenShift?](#qué-es-openshift)
+##### [¿Qué es OpenShift?](#qué-es-openshift-1)
 
-##### [¿Qué es Ngrok?](#¿qué-es-ngrok)
+##### [¿Qué es Ngrok?](#¿qué-es-ngrok-1)
 #### [4. Escenario que se ha montado](#escenario-que-se-ha-montado)
 
-##### [Minishift](#minishift)
+##### [Minishift](#minishift-1)
 
-##### [CodeReady Containers (CRC)](#codeready-containers-crc)
+##### [CodeReady Containers (CRC)](#codeready-containers-crc-1)
 
-##### [Escenarios](#escenario)
+##### [Escenario](#escenario)
 
 #### [5. Realización de la parte práctica](#casos-prácticos)
 
