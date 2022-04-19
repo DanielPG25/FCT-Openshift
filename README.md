@@ -307,5 +307,13 @@ Y si entramos en la aplicación, vemos que se ha producido el cambio:
     <img src="Practica/bookmedik_afterhook.png" alt="" width="500"/>
 </p>
 
+Como vemos, desplegar aplicaciones tanto desde el código fuente usando Image2Source, como desplegarlas desde un fichero Dockerfile es bastante sencillo, lo que proporciona muchas posibilidades a los desarrolladores que trabajen con Openshift y no quieran/puedan aprender sobre como funiona Kubernetes y/o Docker. 
 #### Creación de una aplicación a partir de una Plantilla
 
+Este método es algo más avanzado que los dos anteriores, y se escapa un poco de la filosofía que hemos presentado antes de que los desarrolladores no tenían por qué conocer como funciona Kubernetes para saber como desplegar sus aplicaciones. Sin embargo, debido a la gran potencia y versatilidad que ofrece, vamos a presentar como desplegar una aplicación usando una plantilla (Template). 
+
+Una plantilla es simplemente una representación escrita de los recursos que va a necesitar nuestra aplicación, escrita en un fichero "yaml" o "json". Es básicamente un maniefiesto en el cual aparecen todos los recursos que serán necesarios para desplegar nuestra aplicación. Dichos recursos, en los dos apartados anteriores los creaba automáticamente Openshift. Entonces, ¿cuál es la ventaja de usar plantillas?
+
+La principal ventaja de crear plantillas radica en la gran versatilidad y grado de personalización que podemos dar a los recursos que creemos. También nos ofrece la posibilidad de agrupar recursos necesarios para una misma aplicación. Así pues, en el apartado anterior, tenía que crear primero los recursos de la base de datos que necesita `bookmedik` y después los recursos del propio `bookmedik`. Si por alguna razón quisiera volver a crear dicha aplicación en otro proyecto, tendría que volver a realizar los mismos pasos, lo que a la larga consumiría bastante tiempo. 
+
+Es por ello que usamos plantillas para agrupar recursos y ahorrar tiempo, ya si hubiéramos usado una plantilla para desplegar la aplicación, solo tendríamos que seleccionar dicha plantilla y tanto la aplicación en sí como la base de datos se crearían a la vez y en un momento. Dicho esto, en este apartado vamos a desplegar la aplicación `Wordpress` junto con una base de datos `MySQL` usando la siguiente [plantilla](Practica/wordpress-template.yaml), en la cual hemos configurado también el almacenamiento persistente tanto para la base de datos como para la los ficheros (imágenes, audios, videos, etc) que subamos a nuestro `Wordpress`.
