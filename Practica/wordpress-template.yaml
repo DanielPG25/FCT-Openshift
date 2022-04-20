@@ -140,6 +140,18 @@ objects:
         requests:
           storage: 1Gi
 
+  # PersistentVolumeClaim de Wordpress
+  - kind: PersistentVolumeClaim
+    apiVersion: v1
+    metadata:
+      name: ${APPLICATION_NAME}-contenido
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 1Gi
+
   # WordPress DeploymentConfig
   - kind: DeploymentConfig
     apiVersion: v1
@@ -186,10 +198,16 @@ objects:
               volumeMounts:
                 - name: ${APPLICATION_NAME}-subidas
                   mountPath: /opt/app-root/src/pv-subidas
+                - name: ${APPLICATION_NAME}-contenido
+                  mountPath: /opt/app-root/src/wp-content
+                  subPath: wp-content
           volumes:
             - name: ${APPLICATION_NAME}-subidas
               persistentVolumeClaim:
                 claimName: ${APPLICATION_NAME}-subidas
+            - name: ${APPLICATION_NAME}-contenido
+              persistentVolumeClaim:
+                claimName: ${APPLICATION_NAME}-contenido
 
   # Servicio MySQL
   - kind: Service
