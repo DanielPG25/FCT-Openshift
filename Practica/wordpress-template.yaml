@@ -140,7 +140,7 @@ objects:
         requests:
           storage: 1Gi
 
-  # PersistentVolumeClaim de Wordpress
+  # PersistentVolumeClaim de Wordpress 2
   - kind: PersistentVolumeClaim
     apiVersion: v1
     metadata:
@@ -200,7 +200,6 @@ objects:
                   mountPath: /opt/app-root/src/pv-subidas
                 - name: ${APPLICATION_NAME}-contenido
                   mountPath: /opt/app-root/src/wp-content
-                  subPath: wp-content
           volumes:
             - name: ${APPLICATION_NAME}-subidas
               persistentVolumeClaim:
