@@ -199,7 +199,8 @@ objects:
                 - name: ${APPLICATION_NAME}-subidas
                   mountPath: /opt/app-root/src/pv-subidas
                 - name: ${APPLICATION_NAME}-contenido
-                  mountPath: /opt/app-root/src/wp-content
+                  mountPath: /opt/app-root/src/wp-content/languages
+                  subPath: languages
           volumes:
             - name: ${APPLICATION_NAME}-subidas
               persistentVolumeClaim:
