@@ -320,3 +320,34 @@ Es por ello que usamos plantillas para agrupar recursos y ahorrar tiempo, ya que
 
 Para poder usar dicha plantilla, nos dirigimos al apartado de `Add+` o le damos al botón de `+` en la parte superior de la pantalla:
 
+<p align="center">
+    <img src="Practica/anadir_plantilla.png" alt="" width="500"/>
+</p>
+
+Una vez hecho esto, simplemente tenemos que copiar el contenido del fichero `yaml` y crear la plantilla. Habiendo realizado esto, ya podemos hacer uso de nuestra plantilla desde el catálogo:
+
+<p align="center">
+    <img src="Practica/uso_plantilla.gif" alt="" width="1000"/>
+</p>
+
+Como vemos, al iniciar la plantilla, se han creado automáticamente los dos despliegues que definimos en la misma: el de `MySQL` y el de `Wordpress`. También se han creado todos los recursos que definimos en la misma, tales como rutas, volúmenes, imagestreams, etc. De esta forma, cada vez que tengamos que volver a desplegar nuestra aplicación, simplemente tendremos que volver a usar la misma plantilla, sin necesidad de tener que crear cada uno de esos despliegues a mano. Si entramos en la ruta que se ha creado, podremos ver la pantalla de instalación de `Wordpress`:
+
+<p align="center">
+    <img src="Practica/wodpress-instalacion.png" alt="" width="500"/>
+</p>
+
+Una vez completada la instalación, podemos ver nuestra aplicación funcionando sin problemas:
+
+<p align="center">
+    <img src="Practica/wordpress-inicio.png" alt="" width="500"/>
+</p>
+
+Como hemos definido unos volúmenes en la plantilla, tanto para guardar la información de la base de datos como para guardar la información relativa a nuestro despliegue de `Wordpress` (imágenes que subamos, configuración del idioma, etc), el almacenamiento es persistente, lo que quiere decir que si hay algún error y necesitamos eliminar la aplicación y volver a desplegarla, toda nuestra información y configuración seguirá ahí. 
+
+Para configurar el despliegue continuo, los pasos son exactamente los mismos que la primera vez: activar ngrok, cambiar la url en el webhook de Github, etc. Así pues, una vez hecho esto, cada vez que hagamos un cambio en el repositorio, Github avisará a Openshift y volverá a saltar el build y el despliegue de la aplicación:
+
+<p align="center">
+    <img src="Practica/dc_wordpress.gif" alt="" width="1000"/>
+</p>
+
+Con esto hemos comprobado como Openshift es capaz de desplegar aplicaciones desde el código fuente (Image2Source), desde un Dockerfile o usando una plantilla. Todas las opciones son válidas y dependerá de nosotros y del trabajo que estemos realizando el elegir cual de ellas usar para cada ocasión.
