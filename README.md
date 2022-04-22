@@ -287,11 +287,11 @@ Como vemos, Openshift detecta automáticamente el Dockerfile y nos indica que es
 Si entramos en la ruta que se ha creado automáticamente, nos encontramos a la aplicación funcionando perfectamente:
 
 <p align="center">
-    <img src="Practica/bookmedik1.png" alt="" width="500"/>
+    <img src="Practica/bookmedik1.png" alt="" width="600"/>
 </p>
 
 <p align="center">
-    <img src="Practica/bookmedik2.png" alt="" width="500"/>
+    <img src="Practica/bookmedik2.png" alt="" width="600"/>
 </p>
 
 El despliegue continuo se configura exactamente de la misma forma forma que en el paso anterior: activar ngrok, cambiar la url en el webhook de Github, etc. Así pues, una vez hecho esto, cada vez que hagamos un cambio en el repositorio, Github avisará a Openshift y volverá a saltar el build y el despliegue de la aplicación:
