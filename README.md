@@ -235,7 +235,7 @@ ngrok http https://localhost:6443
 Una vez hecho esto, nos creará lo siguiente:
 
 <p align="center">
-    <img src="Practica/ngrok1.png" alt="" width="600"/>
+    <img src="Practica/ngrok1.png" alt="" width="700"/>
 </p>
 
 El enlace marcado en rojo es el que tenemos que añadir a la configuración del `Webhook` de Github. También debemos añadir lo siguiente en la configuración: `/apis/build.openshift.io/v1/namespaces/prueba/buildconfigs/flask-temperaturas/webhooks/<SECRET>/github` (la ruta del `Webhook` nos la indica el propio build de la aplicación). Así pues, la configuración del `Webhook` queda de la siguiente forma:
