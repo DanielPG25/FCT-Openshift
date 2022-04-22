@@ -317,10 +317,10 @@ La principal ventaja de crear plantillas radica en la gran versatilidad y grado 
 
 Es por ello que usamos plantillas para agrupar recursos y ahorrar tiempo, ya que si hubiéramos usado una plantilla para desplegar la aplicación, solo tendríamos que seleccionar dicha plantilla y tanto la aplicación en sí como la base de datos se crearían a la vez y en un momento. Dicho esto, en este apartado vamos a desplegar la aplicación `Wordpress` junto con una base de datos `MySQL` usando la siguiente [plantilla](Practica/wordpress-template.yaml), en la cual hemos configurado también el almacenamiento persistente tanto para la base de datos como para los ficheros (imágenes, audios, vídeos, etc) que subamos a nuestro `Wordpress`.
 
-Para poder usar dicha plantilla, nos dirigimos al apartado de `Add+` o le damos al botón de `+` en la parte superior de la pantalla:
+Para poder usar dicha plantilla, nos dirigimos al apartado de `+Add` o le damos al botón de `+` en la parte superior de la pantalla:
 
 <p align="center">
-    <img src="Practica/anadir_plantilla.png" alt="" width="750"/>
+    <img src="Practica/anadir_plantilla.png" alt="" width="850"/>
 </p>
 
 Una vez hecho esto, simplemente tenemos que copiar el contenido del fichero `yaml` y crear la plantilla. Habiendo realizado esto, ya podemos hacer uso de nuestra plantilla desde el catálogo:
