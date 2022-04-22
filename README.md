@@ -275,7 +275,7 @@ Dicha imagen es bastante simple de configurar, ya que lo único que nos pide son
 Una vez hecho esto, ya podemos ponernos a crear la aplicación de bookmedik. Para ello, al igual de hicimos anteriormente, le indicamos el repositorio en el que se encuentra el fichero Dockerfile:
 
 <p align="center">
-    <img src="Practica/bookmedik_docker.png" alt="" width="500"/>
+    <img src="Practica/bookmedik_docker.png" alt="" width="600"/>
 </p>
 
 Como vemos, Openshift detecta automáticamente el Dockerfile y nos indica que esa es la opción deseable para construir la aplicación. Solo debemos indicarle el puerto en el cual escuchará la aplicación. Así pues, le indicamos que queremos que construya la aplicación a partir de dicho Dockerfile, lo cual generará todos los recursos y procesos necesarios para crear la aplicación (build, deployment, services, etc). Pasado un tiempo, ya tendremos creada y lista nuestra aplicación `bookmedik`:
