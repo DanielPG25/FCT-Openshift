@@ -303,7 +303,7 @@ El despliegue continuo se configura exactamente de la misma forma forma que en e
 Y si entramos en la aplicación, vemos que se ha producido el cambio:
 
 <p align="center">
-    <img src="Practica/bookmedik_afterhook.png" alt="" width="500"/>
+    <img src="Practica/bookmedik_afterhook.png" alt="" width="650"/>
 </p>
 
 Como vemos, desplegar aplicaciones tanto desde el código fuente usando Image2Source, como desplegarlas desde un fichero Dockerfile es bastante sencillo, lo que proporciona muchas posibilidades a los desarrolladores que trabajen con Openshift y no quieran/puedan aprender sobre como funiona Kubernetes y/o Docker. 
