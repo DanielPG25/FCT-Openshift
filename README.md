@@ -235,13 +235,13 @@ ngrok http https://localhost:6443
 Una vez hecho esto, nos creará lo siguiente:
 
 <p align="center">
-    <img src="Practica/ngrok1.png" alt="" width="500"/>
+    <img src="Practica/ngrok1.png" alt="" width="600"/>
 </p>
 
 El enlace marcado en rojo es el que tenemos que añadir a la configuración del `Webhook` de Github. También debemos añadir lo siguiente en la configuración: `/apis/build.openshift.io/v1/namespaces/prueba/buildconfigs/flask-temperaturas/webhooks/<SECRET>/github` (la ruta del `Webhook` nos la indica el propio build de la aplicación). Así pues, la configuración del `Webhook` queda de la siguiente forma:
 
 <p align="center">
-    <img src="Practica/webhook1.png" alt="" width="500"/>
+    <img src="Practica/webhook1.png" alt="" width="600"/>
 </p>
 
 Ahora, cada vez que se haga un `push` al repositorio, enviará mensaje a Openshift avisando del cambio, el cual generará un nuevo build:
