@@ -1,0 +1,7 @@
+# Conclusiones
+
+Con la realización de este proyecto hemos logrado comprender un poco mejor como desplegar aplicaciones en Openshift usando algunas de las opciones que nos ofrece. Sin embargo, esto no es, ni mucho menos, todo lo que nos puede ofrecer una herramienta tan potente como lo es Openshift. Hay muchas más cosas y mucho más contenido en el que podríamos profundizar y seguir aprendiendo, pero se escapa un poco de lo que es el objetivo de este proyecto, que es la introducción al despliegue de aplicaciones.
+
+También hemos aprendido como utilizar `ngrok` en un ambiente local para realizar las pruebas para el despliegue continuo de aplicaciones. Esta herramienta nos ofrece bastante versatilidad, pero en ambientes de producción no es aconsejable su uso, ya que en dichos ambientes, Openshift suele ser accesible desde el exterior, por lo que habría que usar otros medios para lograr ese despliegue continuo.
+
+Por último, hemos aprendido a usar CoreReady Containers (CRC) para aprender a usar Openshift. Es una herramienta muy potente de aprendizaje, con las únicas pegas de el alto nivel de exigencia de recursos (RAM, CPU, etc) y el hecho de que cada cierto tiempo se borren las aplicaciones desplegadas. No obstante, para aprender a utilizar Openshift y todo lo que nos ofrece, es más que suficiente, y las posibilidades que nos ofrece, opaca sin lugar a dudas los inconvenientes que tiene.
