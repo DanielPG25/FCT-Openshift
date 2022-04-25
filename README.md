@@ -41,7 +41,7 @@
 
 ### Introducción
 
-En este proyecto vamos a aprender como desplegar de forma continua aplicaciones web utilizando una herramienta llamada OpenShift. Esta es una herramienta muy potente la cual, como veremos a lo largo del proyecto, facilitará mucho la labor a los desarrolladores y programadores, haciendo que puedan implantar sus aplicaciones con mucha facilidad.
+En este proyecto vamos a aprender como desplegar de forma continua aplicaciones web utilizando una herramienta llamada Openshift. Esta es una herramienta muy potente la cual, como veremos a lo largo del proyecto, facilitará mucho la labor a los desarrolladores y programadores, haciendo que puedan implantar sus aplicaciones con mucha facilidad.
 
 ### Objetivos 
 
@@ -107,11 +107,11 @@ Minishift es una herramienta de software libre que crea una máquina virtual con
 * Todos los anteriores:
     + [VitualBox](https://www.virtualbox.org/wiki/Downloads) (A partir de la versión 5.1.12)
 
-Esta es una gran herramienta para realizar pruebas en local, pero cuenta con el inconveniente de que la versión de Openshift que utiliza es la 3 (en el momento de escribir esto). Esto, para la realización de este proyecto es un gran incoveniente, ya que el cambio de la versión 3 a la 4 de Openshift es bastante grande e influye en muchas cosas. Si aún así, no tienes problemas con este inconveniente y quieres usar "minishift", el siguiente [enlace](https://docs.okd.io/3.11/minishift/getting-started/index.html) te dará más información.
+Esta es una gran herramienta para realizar pruebas en local, pero cuenta con el inconveniente de que la versión de Openshift que utiliza es la 3 (en el momento de escribir esto). Esto, para la realización de este proyecto es un gran inconveniente, ya que el cambio de la versión 3 a la 4 de Openshift es bastante grande e influye en muchas cosas. Si aún así, no tienes problemas con este inconveniente y quieres usar "minishift", el siguiente [enlace](https://docs.okd.io/3.11/minishift/getting-started/index.html) te dará más información.
 
 #### CodeReady Containers (CRC)
 
-CodeReady Containers es una herramienta, que al igual que ocurre con "minishift" despliega una máquina virtual en la que se instala un cluster de Openshift de un solo nodo. Esta herramienta es ofrecida por la propia Red Hat, por lo que es necesario tener, como mínimo, una cuenta gratuita en Red Hat. La máquina que crea tiene los siguientes requisitos de hardware: 9 GB de ram, 4 vcpu y 35 GB de disco duro disponible. Debido a esto, es remendable tener una máquina algo potente para poder usar herramienta, ya que esos son los requisitos de la máquina virtual, no de la antitriona. También es necesario que el sistema operativo anfitrión sea Centos (versión 7.5 o mayor), Red Hat o Fedora (las dos últimas versiones estables).
+CodeReady Containers es una herramienta, que al igual que ocurre con "minishift" despliega una máquina virtual en la que se instala un cluster de Openshift de un solo nodo. Esta herramienta es ofrecida por la propia Red Hat, por lo que es necesario tener, como mínimo, una cuenta gratuita en Red Hat. La máquina que crea tiene los siguientes requisitos de hardware: 9 GB de ram, 4 vcpu y 35 GB de disco duro disponible. Debido a esto, es recomendable tener una máquina algo potente para poder usar herramienta, ya que esos son los requisitos de la máquina virtual, no de la anfitriona. También es necesario que el sistema operativo anfitrión sea Centos (versión 7.5 o mayor), Red Hat o Fedora (las dos últimas versiones estables).
 
 La gran ventaja que ofrece esta herramienta con respecto a "minishift", es que podemos usar la versión 4 de Openshift, por lo que es una herramienta que nos ofrece la capacidad de administrar y utilizar un cluster de Openshift con todas las funcionalidades que ofrece dicha versión. Es debido a esto, que para la realización de este proyecto vamos a utilizar esta herramienta y no "minishift".
 
@@ -306,12 +306,12 @@ Y si entramos en la aplicación, vemos que se ha producido el cambio:
     <img src="Practica/bookmedik_afterhook.png" alt="" width="650"/>
 </p>
 
-Como vemos, desplegar aplicaciones tanto desde el código fuente usando Image2Source, como desplegarlas desde un fichero Dockerfile es bastante sencillo, lo que proporciona muchas posibilidades a los desarrolladores que trabajen con Openshift y no quieran/puedan aprender sobre como funiona Kubernetes y/o Docker. 
+Como vemos, desplegar aplicaciones tanto desde el código fuente usando Image2Source, como desplegarlas desde un fichero Dockerfile es bastante sencillo, lo que proporciona muchas posibilidades a los desarrolladores que trabajen con Openshift y no quieran/puedan aprender sobre como funciona Kubernetes y/o Docker. 
 #### Creación de una aplicación a partir de una Plantilla
 
 Este método es algo más avanzado que los dos anteriores, y se escapa un poco de la filosofía que hemos presentado antes de que los desarrolladores no tenían por qué conocer como funciona Kubernetes para saber como desplegar sus aplicaciones. Sin embargo, debido a la gran potencia y versatilidad que ofrece, vamos a presentar como desplegar una aplicación usando una plantilla (Template). 
 
-Una plantilla es simplemente una representación escrita de los recursos que va a necesitar nuestra aplicación, escrita en un fichero "yaml" o "json". Es básicamente un maniefiesto en el cual aparecen todos los recursos que serán necesarios para desplegar nuestra aplicación. Dichos recursos, en los dos apartados anteriores los creaba automáticamente Openshift. Entonces, ¿cuál es la ventaja de usar plantillas?
+Una plantilla es simplemente una representación escrita de los recursos que va a necesitar nuestra aplicación, escrita en un fichero "yaml" o "json". Es básicamente un manifiesto en el cual aparecen todos los recursos que serán necesarios para desplegar nuestra aplicación. Dichos recursos, en los dos apartados anteriores los creaba automáticamente Openshift. Entonces, ¿cuál es la ventaja de usar plantillas?
 
 La principal ventaja de crear plantillas radica en la gran versatilidad y grado de personalización que podemos dar a los recursos que creemos. También nos ofrece la posibilidad de agrupar recursos necesarios para una misma aplicación. Así pues, en el apartado anterior, tenía que crear primero los recursos de la base de datos que necesita `bookmedik` y después los recursos del propio `bookmedik`. Si por alguna razón quisiera volver a crear dicha aplicación en otro proyecto, tendría que volver a realizar los mismos pasos, lo que a la larga consumiría bastante tiempo. 
 
@@ -357,7 +357,7 @@ Con la realización de este proyecto hemos logrado comprender un poco mejor como
 
 También hemos aprendido como utilizar `ngrok` en un ambiente local para realizar las pruebas para el despliegue continuo de aplicaciones. Esta herramienta nos ofrece bastante versatilidad, pero en ambientes de producción no es aconsejable su uso, ya que en dichos ambientes, Openshift suele ser accesible desde el exterior, por lo que habría que usar otros medios para lograr ese despliegue continuo.
 
-Por último, hemos aprendido a usar CoreReady Containers (CRC) para aprender a usar Openshift. Es una herramienta muy potente de aprendizaje, con las únicas pegas de el alto nivel de exigencia de recursos (RAM, CPU, etc) y el hecho de que cada cierto tiempo se borren las aplicaciones desplegadas. No obstante, para aprender a utilizar Openshift y todo lo que nos ofrece, es más que suficiente, y las posibilidades que nos ofrece, opaca sin lugar a dudas los inconvenientes que tiene.
+Por último, hemos aprendido a usar CodeReady Containers (CRC) para aprender a usar Openshift. Es una herramienta muy potente de aprendizaje, con las únicas pegas de el alto nivel de exigencia de recursos (RAM, CPU, etc) y el hecho de que cada cierto tiempo se borren las aplicaciones desplegadas. No obstante, para aprender a utilizar Openshift y todo lo que nos ofrece, es más que suficiente, y las posibilidades que nos ofrece, opaca sin lugar a dudas los inconvenientes que tiene.
 
 ### Bibliografía
 
