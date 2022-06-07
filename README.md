@@ -27,7 +27,7 @@
 
 #### [5. Realización de la parte práctica](#casos-prácticos)
 
-##### [Image2Source](#image2source-de-una-aplicación-basada-en-python)
+##### [Source2Image](#source2image-de-una-aplicación-basada-en-python)
 
 ##### [Dockerfile](#creación-de-una-aplicación-a-partir-de-un-dockerfile)
 
@@ -181,7 +181,7 @@ Así pues, hemos terminado de crear el escenario con el que trabajaremos a lo la
 
 Para este proyecto vamos a ver las diferentes formas que tiene Openshift de crear contendedores. Antes hemos mencionado el Source2Image, pero Openshift nos ofrece también otras opciones que son bastante interesantes.
 
-#### Image2Source de una aplicación basada en python
+#### Source2Image de una aplicación basada en python
 
 En primer lugar, vamos a comenzar con una aplicación simple escrita en pyhton. Para ello he elegido la aplicación desarrollada por José Domingo Muñoz de "temperaturas_flask", la cual la podéis encontrar en el siguiente [repositorio](https://github.com/josedom24/flask_temperaturas). Esta aplicación nos muestra la temperatura máxima y mínima del día en el municipio de Sevilla que le indiquemos. Así pues, lo primero que hemos hecho ha sido hacer un fork del repositorio y actualizar el fichero "requirements.txt", ya que la versión de los paquetes estaban desactualizadas y darían problemas en openshift:
 
@@ -306,7 +306,7 @@ Y si entramos en la aplicación, vemos que se ha producido el cambio:
     <img src="Practica/bookmedik_afterhook.png" alt="" width="650"/>
 </p>
 
-Como vemos, desplegar aplicaciones tanto desde el código fuente usando Image2Source, como desplegarlas desde un fichero Dockerfile es bastante sencillo, lo que proporciona muchas posibilidades a los desarrolladores que trabajen con Openshift y no quieran/puedan aprender sobre como funciona Kubernetes y/o Docker. 
+Como vemos, desplegar aplicaciones tanto desde el código fuente usando Source2Image, como desplegarlas desde un fichero Dockerfile es bastante sencillo, lo que proporciona muchas posibilidades a los desarrolladores que trabajen con Openshift y no quieran/puedan aprender sobre como funciona Kubernetes y/o Docker. 
 #### Creación de una aplicación a partir de una Plantilla
 
 Este método es algo más avanzado que los dos anteriores, y se escapa un poco de la filosofía que hemos presentado antes de que los desarrolladores no tenían por qué conocer como funciona Kubernetes para saber como desplegar sus aplicaciones. Sin embargo, debido a la gran potencia y versatilidad que ofrece, vamos a presentar como desplegar una aplicación usando una plantilla (Template). 
@@ -349,7 +349,7 @@ Para configurar el despliegue continuo, los pasos son exactamente los mismos que
     <img src="Practica/dc_wordpress.gif" alt="" width="1000"/>
 </p>
 
-Con esto hemos comprobado como Openshift es capaz de desplegar aplicaciones desde el código fuente (Image2Source), desde un Dockerfile o usando una plantilla. Todas las opciones son válidas y dependerá de nosotros y del trabajo que estemos realizando el elegir cual de ellas usar para cada ocasión.
+Con esto hemos comprobado como Openshift es capaz de desplegar aplicaciones desde el código fuente (Source2Image), desde un Dockerfile o usando una plantilla. Todas las opciones son válidas y dependerá de nosotros y del trabajo que estemos realizando el elegir cual de ellas usar para cada ocasión.
 
 ### Conclusiones
 
