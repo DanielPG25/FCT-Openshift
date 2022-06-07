@@ -16,7 +16,8 @@
 
 ##### [¿Qué es OpenShift?](#qué-es-openshift-1)
 
-##### [¿Qué es Ngrok?](#¿qué-es-ngrok-1)
+##### [¿Qué es Ngrok?](#qué-es-ngrok-1)
+
 #### [4. Escenario que se ha montado](#escenario-que-se-ha-montado)
 
 ##### [Minishift](#minishift-1)
@@ -263,7 +264,7 @@ Anteriormente hemos comprobado como Openshift puede crear una aplicación a part
 Así pues, he creado un Dockerfile a partir del cual se desplegará una aplicación escrita en `php` llamada `bookmedik`. Dicho Dockerfile se encuentra en este [repositorio de Github](https://github.com/DanielPG25/bookmedik_openshift.git). Esta aplicación necesita de una base de datos para poder funcionar, por lo que en primer lugar he creado dicha base de datos usando como base la imagen de mariadb que nos ofrece openshift:
 
 <p align="center">
-    <img src="Practica/mariadb.png)" alt="" width="500"/>
+    <img src="Practica/mariadb.png" alt="" width="500"/>
 </p>
 
 Dicha imagen es bastante simple de configurar, ya que lo único que nos pide son las variables de entorno necesarias para configurar mariadb (contraseña de root, nombre de la base de datos, etc):
